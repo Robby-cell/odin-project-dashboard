@@ -1,0 +1,44 @@
+:root {
+    --my-gray: rgb(209, 204, 204);
+    font-size: 16px;
+}
+
+html {
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 3fr 10fr;
+    grid-template-rows: 1fr 5fr;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.main-panel {
+    background-color: var(--my-gray);
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.projects {
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+
+.project-name {
+    font-weight: bold;
+}
