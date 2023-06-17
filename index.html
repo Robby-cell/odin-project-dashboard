@@ -1,144 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+<html lang="en" id="root">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
 
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/sidebar.css">
-    <link rel="stylesheet" href="./style/header.css">
+        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="./style/sidebar.css">
+        <link rel="stylesheet" href="./style/header.css">
+        <link rel="stylesheet" href="./style/announcements.css">
+        <link rel="stylesheet" href="./style/trending.css">
 
-    <script src="./script/script.js"></script>
+    </head>
+    <body>
 
-</head>
-<body>
+        <div class="container">
 
-    <div class="container">
+            <div class="sidebar">
 
-        <div class="sidebar">
-            <div class="dashboard" id="text">
-                Dashboard
+                <div class="dashboard-div">
+                    <img src="./assets/dashboard.svg" alt="" class="dashboard-img">
+                <button class="animatable-sidebar" id="dashboard-button">
+                    Dashboard
+                </button>
+                </div>
+
+                <div class="home-div">
+                    <img src="./assets/home.svg" alt="" class="home-img">
+                <button class="animatable-sidebar" id="home-button" onclick="redirect('./document/home.html', this)">Home
+                </button>
+                </div>
+
+                <div class="profile-div">
+                    <img src="./assets/profile.svg" alt="" class="profile-img">
+                <button class="animatable-sidebar" id="profile-button" onclick="redirect('./document/profile.html', this)">Profile
+                </button>
+                </div>
+
+                <div class="messages-div">
+                    <img src="./assets/message.svg" alt="" class="message-img">
+                <button class="animatable-sidebar" id="messages-button" onclick="redirect('./document/messages.html', this)">Messages
+                </button>
+                </div>
+
+                <div class="history-div">
+                    <img src="./assets/history.svg" alt="" class="history-img">
+                <button class="animatable-sidebar" id="history-button" onclick="redirect('./document/history.html', this)">History
+                </button>
+                </div>
+
+                <div class="tasks-div">
+                    <img src="./assets/tasks.svg" alt="" class="tasks-img">
+                <button class="animatable-sidebar" id="tasks-button" onclick="redirect('./document/tasks.html', this)">Tasks
+                </button>
+                </div>
+
+                <div class="communities-div">
+                    <img src="./assets/communities.svg" alt="" class="communities-img">
+                <button class="animatable-sidebar" id="communities-button"
+                    onclick="redirect('./document/communities/index.html', this)">Communities
+                </button>
+                </div>
+
             </div>
 
-            <div class="home" id="text">Home</div>
-            <div class="profile" id="text">Profile</div>
-            <div class="messages" id="text">Messages</div>
-            <div class="history" id="text">History</div>
-            <div class="tasks" id="text">Tasks</div>
-            <div class="communities" id="text">Communities</div>
+            <div class="header-main">
+
+                <div class="header-top">
+
+                    <div class="search-bar-holder">
+                        <img img src="./assets/search-glass.svg" alt="" class="search-icon">
+
+                        <input type="text" class="search-bar" onkeypress="handle_search(event, this)"
+                            placeholder="Click me to Search!">
+                        </input>
+                    </div>
+                    <div class="notifications" id="notifications">
+                        <img src="./assets/notification.svg" alt="" class="notifications-img-header">
+                    </div>
+                    <div class="profile">
+
+                    </div>
+                    <div class="name">
+
+                    </div>
+
+                </div>
+                <div class="header-bottom">
+
+
+                    <div class="welcome">
+
+                        <div class="profile-header">
+                            <img src="./assets/sample-pfp.svg" alt="" class="profile-header-content">
+                        </div>
+
+                        <div class="welcome-div">
+                            <div class="hi-there">
+                                hi
+                            </div>
+                            <div class="whoami">
+                                who
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <div class="social-action-new" id="social-action-new">
+                            <button class="social-action-new">
+                                New
+                            </button>
+                        </div>
+                        <div class="social-action-upload" id="social-action-upload">
+                            <button class="social-action-upload">
+                                Upload
+                            </button>
+                        </div>
+                        <div class="social-action-share" id="social-action-share">
+                            <button class="social-action-share">
+                                Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="main-panel">
+
+                <div class="panel-container">
+
+                    <div class="my-projects">
+
+                        <div class="my-project-title">
+                            My Projects
+                        </div>
+
+                        <div class="project1">
+                            <div class="proj-name">Project 1</div>
+                            <p class="proj-description">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque molestiae in ea. Ipsam
+                                doloremque ipsum alias illo laborum facere recusandae?
+                            </p>
+                            <div class="actions"></div>
+                        </div>
+                        <div class="project2">
+                            <div class="proj-name">another proj</div>
+                            <p class="proj-description">
+                                this is project 2
+                            </p>
+                            <div class="actions"></div>
+                        </div>
+                        <div class="project3">
+                            <div class="proj-name"></div>
+                            <p class="proj-description">
+                                and 3...
+                            </p>
+                            <div class="actions"></div>
+                        </div>
+                        <div class="project4">
+                            <div class="proj-name"></div>
+                            <p class="proj-description"></p>
+                            <div class="actions"></div>
+                        </div>
+                        <div class="project5">
+                            <div class="proj-name"></div>
+                            <p class="proj-description"></p>
+                            <div class="actions"></div>
+                        </div>
+                        <div class="project6">
+                            <div class="proj-name"></div>
+                            <p class="proj-description"></p>
+                            <div class="actions"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="right-main">
+                        <div class="announcements" id="announcement-tab">
+
+                            <div class="announcement-title">
+                                Announcements
+                            </div>
+
+                            <div id="announcement-holder">
+
+                            </div>
+
+                            <!--
+                            <div class="announcement" id="announce1">
+                                <div class="content-title"></div>
+                                <p class="announce-content"></p>
+                            </div>
+                            <div class="announcement" id="announce2">
+                                <div class="content-title"></div>
+                                <p class="announce-content"></p>
+                            </div>
+                            <div class="announcement" id="announce3">
+                                <div class="content-title"></div>
+                                <p class="announce-content"></p>
+                            </div>
+                            -->
+
+                        </div>
+
+                        <div class="trending-bar">
+
+                            <div class="trending-title">
+                                Trending
+                            </div>
+                            <div class="trending-content-holder">
+                                <div class="trending-content">
+                                    <img src="" alt="" class="trending-pfp">
+                                    <div class="trending-holder-right">
+                                    <div class="trending-tag">@john</div>
+                                    <div class="trending-story">solved world hunger</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="header">
+        <script src="./script/script.js" defer></script>
+        <script src="./script/social.js" defer></script>
+        <script src="./script/search.js" defer></script>
+        <script src="./script/announcements.js" defer></script>
+        <script src="./script/sidebar.js" defer></script>
 
-            <div class="header-top">
-
-                <div class="search-bar">
-
-                </div>
-                <div class="notifications">
-
-                </div>
-                <div class="profile">
-
-                </div>
-                <div class="name">
-
-                </div>
-
-            </div>
-            <div class="header-bottom">
-                
-                <div class="hello-there">
-
-                </div>
-
-                <div class="actions">
-                    <div class="social-action-new">
-                        <button class="social-action-new" onclick="not_available()">
-                            New
-                        </button>
-                    </div>
-                    <div class="social-action-upload">
-                        <button class="social-action-upload" onclick="not_available()">
-                            Upload
-                        </button>
-                    </div>
-                    <div class="social-action-share">
-                        <button class="social-action-share" onclick="not_available()">
-                            Share
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="main-panel">
-
-            <div class="main-container">
-
-                <div class="projects">
-
-                    <div class="project-title">
-                        My Projects
-                    </div>
-
-                    <div class="project1">
-                        <div class="project-name"></div>
-                        <p class="project-description"></p>
-                        <div class="actions"></div>
-                    </div>
-                    <div class="project2">
-                        <div class="project-name"></div>
-                        <p class="project-description"></p>
-                        <div class="actions"></div>
-                    </div>
-                    <div class="project3">
-                        <div class="project-name"></div>
-                        <p class="project-description"></p>
-                        <div class="actions"></div>
-                    </div>
-                    <div class="project4">
-                        <div class="project-name"></div>
-                        <p class="project-description"></p>
-                        <div class="actions"></div>
-                    </div>
-                    <div class="project5">
-                        <div class="project-name"></div>
-                        <p class="project-description"></p>
-                        <div class="actions"></div>
-                    </div>
-                    <div class="project6">
-                        <div class="project-name"></div>
-                        <p class="project-description"></p>
-                        <div class="actions"></div>
-                    </div>
-
-                </div>
-
-                <div class="announcements">
-
-                    <div class="announce1" id="announcement">
-                        <div class="content-title"></div>
-                        <p class="announce-content"></p>
-                    </div>
-                    <div class="announce2" id="announcement">
-                        <div class="content-title"></div>
-                        <p class="announce-content"></p>
-                    </div>
-                    <div class="announce3" id="announcement">
-                        <div class="content-title"></div>
-                        <p class="announce-content"></p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-    
-</body>
+    </body>
 </html>

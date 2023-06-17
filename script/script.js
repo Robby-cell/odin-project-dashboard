@@ -1,11 +1,12 @@
-const social_new = document.querySelector('social-action-new');
-const social_upload = document.querySelector('social-action-upload');
-const social_share = document.querySelector('social-action-share');
+const root = document.getElementById('root');
 
-const redirect = (where) => {
+const notifications = document.getElementById('notifications');
+
+notifications.addEventListener("click", function() {
+    alert('noti');
+});
+
+function redirect(where, _what=root) {
+    alert('hello');
     window.open(where, '_blank').focus();
-}
-
-const not_available = () => {
-    alert('feature not available right now.');
 }

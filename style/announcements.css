@@ -1,0 +1,46 @@
+
+.announcements {
+    display: flex;
+
+    flex-direction: column;
+
+    height: 50%;
+}
+
+.announcement-title {
+    margin-top: 2rem;
+}
+
+#announcement-holder {
+    background-color: white;
+    margin-top: 2.3rem;
+    margin-right: 0.5rem;
+
+    border-radius: 0.2rem;
+    border: none;
+
+    display: flex;
+    flex-direction: column;
+    padding: 0.3rem;
+
+    box-shadow: 0 3.2px 3.2px rgba(0, 0, 0, 0.14);
+
+    border-right: 0.3rem solid orange;
+}
+
+.announcement-content, .announcement-content-title {
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+.announcement-content-title {
+    font-size: 0.86rem;
+    font-weight: bold;
+    padding-top: 0.8rem;
+}
+
+.announcement-content {
+    font-size: 0.76rem;
+    padding-bottom: 0.8rem;
+
+    color: rgba(40, 40, 40, 0.87);
+}
